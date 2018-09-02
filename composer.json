@@ -1,0 +1,30 @@
+{
+  "name": "devtoolboxuk/xml",
+  "description": "XML Service",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "": "src/",
+      "devtoolboxuk\\xml\\": "src/"
+    },
+    "classmap": [
+      "src"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Rob Wilson",
+      "email": "rob@dev-toolbox.co.uk"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*"
+  }
+}
