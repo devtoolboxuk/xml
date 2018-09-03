@@ -1,8 +1,8 @@
 <?php
 
-namespace devtoolboxuk\xmlBuilder;
+namespace devtoolboxuk\XmlBundle;
 
-interface xmlInterface
+interface XmlInterface
 {
 
     function writeXMLService();

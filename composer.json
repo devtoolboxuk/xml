@@ -1,11 +1,16 @@
 {
-  "name": "devtoolboxuk/xml",
+  "name": "devtoolboxuk/xml-bundle",
   "description": "XML Service",
   "type": "library",
   "license": "MIT",
+  "keywords": [
+    "XML Generator",
+    "Xml Reader",
+    "Xml Formatter"
+  ],
   "autoload": {
     "psr-4": {
-      "devtoolboxuk\\xmlBuilder\\": "src/"
+      "devtoolboxuk\\XmlBundle\\": "src/"
     }
   },
   "authors": [

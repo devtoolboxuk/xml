@@ -1,8 +1,8 @@
 <?php
 
-namespace devtoolboxuk\xmlBuilder;
+namespace devtoolboxuk\XmlBundle;
 
-class xmlBuilder implements xmlInterface
+class XmlBuilder implements xmlInterface
 {
 
     protected $write;

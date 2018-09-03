@@ -1,6 +1,6 @@
 <?php
 
-namespace devtoolboxuk\xmlBuilder;
+namespace devtoolboxuk\XmlBundle;
 
 use SimpleXmlIterator;
 
