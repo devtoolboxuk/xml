@@ -27,7 +27,7 @@ class XmlGenerator extends XMLWriter
         $this->rootName = $rootName;
     }
 
-    public function createDoc(array $tags = [])
+    public function createDoc($tags = array())
     {
         $this->openMemory();
         $this->setIndent(true);
@@ -70,7 +70,7 @@ class XmlGenerator extends XMLWriter
         return $this->outputMemory();
     }
 
-    public function create($tag_name, array $tags)
+    public function create($tag_name, $tags = array())
     {
         $this->openMemory();
         $this->setIndent(true);
@@ -132,7 +132,7 @@ class XmlGenerator extends XMLWriter
      * @param array $tags Child tag data
      * @throws \UnexpectedValueException  Invalid array for reserved tag value
      */
-    protected function addTags(array $tags)
+    protected function addTags($tags = array())
     {
         foreach ($tags as $name => $value) {
             if (is_array($value)) {

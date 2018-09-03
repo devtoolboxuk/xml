@@ -21,7 +21,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": ">=5.3.3",
+    "php": ">=5.4.16",
     "ext-xmlwriter": ">=0.1"
   },
   "scripts": {
