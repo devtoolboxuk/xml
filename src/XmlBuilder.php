@@ -2,7 +2,7 @@
 
 namespace devtoolboxuk\XmlBundle;
 
-class XmlBuilder implements xmlInterface
+class XmlBuilder implements XmlInterface
 {
 
     protected $write;
