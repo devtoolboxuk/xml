@@ -1,11 +1,8 @@
 <?php
 
-namespace devtoolboxuk\xml;
+namespace devtoolboxuk\xmlBuilder;
 
-use devtoolboxuk\xml\classes\XmlGenerator;
-use devtoolboxuk\xml\classes\XmlReader;
-
-class xmlService implements xmlInterface
+class xmlBuilder implements xmlInterface
 {
 
     protected $write;

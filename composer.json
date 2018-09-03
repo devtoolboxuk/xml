@@ -5,12 +5,8 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "": "src/",
-      "devtoolboxuk\\xml\\": "src/"
-    },
-    "classmap": [
-      "src"
-    ]
+      "devtoolboxuk\\xmlBuilder\\": "src/"
+    }
   },
   "authors": [
     {
@@ -20,6 +16,8 @@
   ],
   "minimum-stability": "dev",
   "require": {
+    "php": ">=5.3.3",
+    "ext-xmlwriter": ">=0.1"
   },
   "scripts": {
     "test": "./vendor/bin/phpunit"

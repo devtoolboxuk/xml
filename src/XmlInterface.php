@@ -1,6 +1,6 @@
 <?php
 
-namespace devtoolboxuk\xml;
+namespace devtoolboxuk\xmlBuilder;
 
 interface xmlInterface
 {
