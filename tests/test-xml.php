@@ -15,7 +15,7 @@ class Xml extends TestCase
     {
         parent::__construct($name, $data, $dataName);
 
-        $this->xmlService = new xmlService();
+        $this->xmlService = new xmlBuilder();
     }
 
     public function testWriteXML()

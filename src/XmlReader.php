@@ -15,9 +15,14 @@ class XmlReader
     public function convertXML($xmlString)
     {
         $iterator = new SimpleXmlIterator($xmlString);
-        $result = $this->getArrayFromXml($iterator);
+
+        $result = [];
+        foreach ($iterator as $iterator) {
+            $result[] = $this->getArrayFromXml($iterator);
+        }
         return $result;
     }
+
 
     /**
      * @param SimpleXmlIterator $iterator
@@ -26,33 +31,37 @@ class XmlReader
     protected function getArrayFromXml(SimpleXmlIterator $iterator)
     {
         $result = [];
-
-        for ($iterator->rewind(); $iterator->valid(); $iterator->next()) {
-            if ($iterator->hasChildren()) {
-                foreach ($iterator->getChildren() as $key => $value) {
-
-                    if ($value->count() >= 1) {
-                        $result[][$iterator->key()][][$key] = $this->getArrayFromXml($value);
-                    } else {
-                        if (true === $value->hasChildren()) {
-                            $result[][$iterator->key()][$key] = $this->getArrayFromXml($value);
-                        } else {
-                            $result[][$iterator->key()] = $this->getArrayFromXml($iterator->current());
+        for($iterator->rewind(); $iterator->valid(); $iterator->next())
+        {
+            if($iterator->hasChildren())
+            {
+                foreach($iterator->getChildren() as $key => $value)
+                {
+                    if(1 <= $value->count())
+                    {
+                        $result[$iterator->key()][][$key] = $this->getArrayFromXml($value);
+                    }
+                    else
+                    {
+                        if(true === $value->hasChildren())
+                        {
+                            $result[$iterator->key()][$key] = $this->getArrayFromXml($value);
+                        }
+                        else
+                        {
+                            $result[$iterator->key()] = $this->getArrayFromXml($iterator->current());
                         }
                     }
                 }
-            } else {
+            }
+            else
+            {
                 $result[$iterator->key()] = $this->convertToStringOrBoolean($iterator->current());
-
-                foreach ($iterator->attributes() as $key => $value) {
-                    $result['@attributes'][$key] = $this->convertToStringOrBoolean($value);;
-                }
-                ksort($result);
             }
         }
-
         return $result;
     }
+
 
     /**
      * Cast to string or to a boolean value if the string contains a true or false
